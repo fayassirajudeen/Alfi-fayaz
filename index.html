@@ -1,18 +1,15 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>Fayaz ❤️ Alfina | Wedding Invitation</title>
+<title>Fayaz & Alfina | Nikah Invitation</title>
 
 <meta name="description"
-      content="Fayaz & Alfina — Nikah Wedding Invitation">
+      content="The Nikah invitation of Fayaz Sirajudeen and Alfina Salim — 13 June 2027.">
 
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -22,8 +19,20 @@
 <style>
 
 /* =========================================================
-   RESET
+   ROOT
 ========================================================= */
+
+:root {
+  --cream: #f8f3ea;
+  --cream-dark: #eadfce;
+  --brown: #493629;
+  --brown-light: #705843;
+  --gold: #ad895b;
+  --gold-light: #d2b486;
+  --white: #ffffff;
+  --text-soft: #7c6d5e;
+  --shadow: 0 20px 60px rgba(60, 43, 28, .12);
+}
 
 * {
   margin: 0;
@@ -36,8 +45,9 @@ html {
 }
 
 body {
-  background: #f8f3eb;
-  color: #3d3027;
+  margin: 0;
+  background: var(--cream);
+  color: var(--brown);
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
 }
@@ -47,8 +57,8 @@ body.locked {
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 button,
@@ -63,336 +73,220 @@ a {
 
 
 /* =========================================================
-   COLORS
+   DESKTOP CONTAINER
 ========================================================= */
 
-:root {
-  --cream: #f8f3eb;
-  --cream2: #efe4d3;
-  --brown: #4b3829;
-  --brown2: #705640;
-  --gold: #a98459;
-  --gold-light: #c6a77b;
-  --white: #ffffff;
-  --soft: #817060;
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin: auto;
+}
+
+section {
+  padding: 110px 0;
 }
 
 
 /* =========================================================
-   OPENING PAGE
+   OPENING SCREEN
 ========================================================= */
 
-#opening-page {
-
+.opening {
   position: fixed;
-
   inset: 0;
-
   z-index: 99999;
 
-  min-height: 100vh;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  text-align: center;
 
   background:
     linear-gradient(
-      rgba(246,237,224,.78),
-      rgba(246,237,224,.88)
+      rgba(248,243,234,.78),
+      rgba(248,243,234,.90)
     ),
-    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=85")
-    center/cover;
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=90")
+    center / cover;
 
   transition:
     opacity 1s ease,
     visibility 1s ease;
-
-  overflow: hidden;
 }
 
-#opening-page.hide {
+.opening.closed {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
-.opening-frame {
-
-  width: min(90%, 650px);
-
-  padding: 50px 25px;
-
+.opening-card {
   position: relative;
-
-  animation: openingIn 1.6s ease;
+  width: min(700px, calc(100% - 40px));
+  padding: 70px 50px;
+  text-align: center;
 }
 
-.opening-frame::before {
-
+.opening-card::before {
   content: "";
-
   position: absolute;
-
   inset: 0;
+  border: 1px solid rgba(120, 90, 55, .35);
+  pointer-events: none;
+}
 
-  border: 1px solid rgba(120,90,55,.35);
-
-  border-radius: 4px;
-
+.opening-card::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(120, 90, 55, .16);
   pointer-events: none;
 }
 
 .bismillah {
+  position: relative;
+  z-index: 2;
 
   font-family: "Amiri", serif;
-
-  font-size: clamp(30px, 6vw, 48px);
-
-  color: var(--brown);
-
-  margin-bottom: 10px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.5;
 }
 
-.opening-sub {
+.opening-note {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 8px;
 
   font-size: 10px;
-
-  letter-spacing: 3px;
-
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-
-  color: var(--soft);
-
-  margin-bottom: 30px;
+  color: var(--text-soft);
 }
 
-.opening-ornament {
+.ornament {
+  position: relative;
+  z-index: 2;
+
+  margin: 25px 0;
 
   color: var(--gold);
-
   font-size: 27px;
-
-  margin: 15px 0;
 }
 
 .opening-label {
+  position: relative;
+  z-index: 2;
 
   font-size: 10px;
-
   letter-spacing: 4px;
-
-  color: var(--soft);
+  color: var(--text-soft);
 }
 
 .opening-names {
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(62px, 13vw, 110px);
-
-  line-height: .82;
-
-  font-weight: 500;
-
-  color: var(--brown);
+  position: relative;
+  z-index: 2;
 
   margin: 18px 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(65px, 9vw, 110px);
+  line-height: .78;
+  font-weight: 500;
 }
 
 .opening-names span {
-
   display: block;
 
-  font-size: 38px;
+  margin: 8px 0;
 
+  font-size: 40px;
+  line-height: 1;
   font-style: italic;
-
   color: var(--gold);
-
-  line-height: 1.4;
 }
 
 .opening-date {
+  position: relative;
+  z-index: 2;
+
+  margin: 25px 0;
 
   font-size: 12px;
-
-  letter-spacing: 5px;
-
   font-weight: 600;
-
-  color: var(--brown2);
-
-  margin: 20px 0 30px;
+  letter-spacing: 5px;
 }
 
 .open-button {
+  position: relative;
+  z-index: 2;
+
+  padding: 16px 36px;
 
   border: 1px solid var(--gold);
-
-  background: rgba(255,255,255,.25);
-
-  color: var(--brown);
-
-  padding: 15px 32px;
-
   border-radius: 50px;
 
-  letter-spacing: 3px;
+  background: transparent;
+  color: var(--brown);
 
   font-size: 10px;
+  letter-spacing: 3px;
 
   cursor: pointer;
 
-  transition: .3s;
+  transition: .35s ease;
 }
 
 .open-button:hover {
-
   background: var(--brown);
-
   color: white;
-
   transform: translateY(-2px);
-}
-
-@keyframes openingIn {
-
-  from {
-    opacity: 0;
-    transform: translateY(35px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 
 /* =========================================================
-   MUSIC BUTTON
+   MUSIC
 ========================================================= */
 
-.music-button {
-
+.music-control {
   position: fixed;
 
-  right: 20px;
+  right: 28px;
+  bottom: 28px;
 
-  bottom: 20px;
+  z-index: 9000;
 
-  z-index: 9990;
-
-  width: 52px;
-
-  height: 52px;
-
-  border-radius: 50%;
+  width: 55px;
+  height: 55px;
 
   border: 1px solid var(--gold);
+  border-radius: 50%;
 
-  background: rgba(248,243,235,.94);
+  background: rgba(248,243,234,.95);
 
   color: var(--brown);
 
-  cursor: pointer;
-
   font-size: 20px;
 
-  box-shadow: 0 8px 25px rgba(0,0,0,.12);
+  cursor: pointer;
+
+  box-shadow: var(--shadow);
 
   transition: .3s;
 }
 
-.music-button:hover {
+.music-control:hover {
   transform: scale(1.08);
 }
 
-.music-button.playing {
-  animation: musicPulse 1.4s infinite;
+.music-control.playing {
+  animation: musicPulse 1.5s infinite;
 }
 
 @keyframes musicPulse {
-
   50% {
     box-shadow:
-      0 0 0 10px rgba(169,132,89,.10),
-      0 8px 25px rgba(0,0,0,.12);
+      0 0 0 10px rgba(173,137,91,.12),
+      var(--shadow);
   }
-}
-
-
-/* =========================================================
-   GENERAL
-========================================================= */
-
-section {
-  padding: 90px 20px;
-}
-
-.container {
-
-  width: min(1100px, 100%);
-
-  margin: auto;
-}
-
-.section-title {
-
-  text-align: center;
-
-  margin-bottom: 50px;
-}
-
-.section-title .arabic {
-
-  font-family: "Amiri", serif;
-
-  font-size: 26px;
-
-  color: var(--gold);
-
-  margin-bottom: 8px;
-}
-
-.section-title h2 {
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(40px, 7vw, 65px);
-
-  font-weight: 500;
-
-  color: var(--brown);
-}
-
-.section-title p {
-
-  max-width: 600px;
-
-  margin: 12px auto 0;
-
-  font-size: 13px;
-
-  line-height: 1.8;
-
-  color: var(--soft);
-}
-
-.divider {
-
-  width: 70px;
-
-  height: 1px;
-
-  background: var(--gold);
-
-  margin: 20px auto;
 }
 
 
@@ -401,105 +295,124 @@ section {
 ========================================================= */
 
 .hero {
+  position: relative;
 
   min-height: 100vh;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   text-align: center;
 
-  position: relative;
+  color: white;
 
   background:
     linear-gradient(
-      rgba(40,30,20,.32),
-      rgba(40,30,20,.45)
+      rgba(35,25,18,.38),
+      rgba(35,25,18,.58)
     ),
-    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85")
-    center/cover;
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=90")
+    center / cover;
 
-  color: white;
+  background-attachment: fixed;
 }
 
 .hero-content {
-
-  padding: 30px;
-
-  animation: heroIn 1.5s ease;
+  max-width: 1000px;
+  padding: 40px;
 }
 
-.hero-small {
-
-  letter-spacing: 5px;
-
+.hero-kicker {
   font-size: 11px;
-
-  text-transform: uppercase;
+  letter-spacing: 6px;
 }
 
 .hero h1 {
+  margin: 25px 0;
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(65px, 14vw, 130px);
+  font-size: clamp(75px, 12vw, 155px);
+
+  line-height: .78;
 
   font-weight: 400;
-
-  line-height: .85;
-
-  margin: 25px 0;
 }
 
 .hero h1 span {
-
   display: block;
 
-  font-size: 48px;
+  margin: 10px 0;
 
-  color: #e6c99e;
+  color: var(--gold-light);
+
+  font-size: 55px;
 
   font-style: italic;
-
-  margin: 5px;
 }
 
 .hero-date {
-
   font-size: 13px;
-
   letter-spacing: 5px;
 }
 
-.scroll-down {
-
+.hero-scroll {
   position: absolute;
 
-  bottom: 25px;
+  bottom: 28px;
 
   left: 50%;
 
   transform: translateX(-50%);
 
-  font-size: 10px;
-
-  letter-spacing: 3px;
+  font-size: 9px;
+  letter-spacing: 4px;
 }
 
-@keyframes heroIn {
 
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+/* =========================================================
+   SECTION TITLES
+========================================================= */
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-heading .arabic {
+  font-family: "Amiri", serif;
+  color: var(--gold);
+  font-size: 26px;
+}
+
+.section-heading h2 {
+  margin-top: 5px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 6vw, 70px);
+
+  font-weight: 500;
+}
+
+.section-heading p {
+  width: min(650px, 100%);
+  margin: 15px auto 0;
+
+  color: var(--text-soft);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.divider {
+  width: 70px;
+  height: 1px;
+
+  margin: 20px auto;
+
+  background: var(--gold);
 }
 
 
@@ -508,38 +421,31 @@ section {
 ========================================================= */
 
 .intro {
-
   background: var(--cream);
 }
 
-.intro-text {
-
-  max-width: 720px;
-
+.intro-inner {
+  width: min(850px, 100%);
   margin: auto;
-
   text-align: center;
+}
+
+.quran {
+  font-family: "Amiri", serif;
+  font-size: clamp(23px, 3vw, 31px);
+  line-height: 2;
+  color: var(--brown);
+}
+
+.translation {
+  margin-top: 25px;
 
   font-family: "Cormorant Garamond", serif;
 
   font-size: 25px;
+  line-height: 1.65;
 
-  line-height: 1.7;
-
-  color: var(--brown);
-}
-
-.intro-arabic {
-
-  font-family: "Amiri", serif;
-
-  font-size: 28px;
-
-  text-align: center;
-
-  color: var(--gold);
-
-  margin-bottom: 20px;
+  color: var(--brown-light);
 }
 
 
@@ -548,67 +454,66 @@ section {
 ========================================================= */
 
 .couple {
-
-  background: #efe4d3;
+  background: var(--cream-dark);
 }
 
 .couple-grid {
-
   display: grid;
+  grid-template-columns: 1fr 120px 1fr;
 
-  grid-template-columns: 1fr 1fr;
+  align-items: center;
 
   gap: 35px;
-
-  max-width: 900px;
-
-  margin: auto;
 }
 
 .person {
-
   text-align: center;
 }
 
 .person-photo {
-
-  width: 260px;
-
-  height: 340px;
+  width: 300px;
+  height: 390px;
 
   margin: auto;
 
   object-fit: cover;
 
-  border-radius: 150px 150px 10px 10px;
+  border-radius: 160px 160px 12px 12px;
 
-  border: 7px solid rgba(255,255,255,.65);
+  border: 8px solid rgba(255,255,255,.65);
 
-  box-shadow: 0 15px 40px rgba(70,50,30,.15);
+  box-shadow: var(--shadow);
+
+  background: #e4d8c7;
 }
 
 .person h3 {
+  margin-top: 25px;
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 42px;
+  font-size: 43px;
 
   font-weight: 500;
-
-  margin-top: 20px;
-
-  color: var(--brown);
 }
 
 .person p {
-
-  font-size: 11px;
-
-  letter-spacing: 2px;
-
-  color: var(--soft);
-
   margin-top: 5px;
+
+  font-size: 9px;
+  letter-spacing: 3px;
+
+  color: var(--text-soft);
+}
+
+.couple-symbol {
+  text-align: center;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 55px;
+
+  color: var(--gold);
 }
 
 
@@ -617,62 +522,48 @@ section {
 ========================================================= */
 
 .countdown {
-
   background: var(--brown);
-
   color: white;
-
   text-align: center;
 }
 
 .countdown h2 {
-
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 50px;
-
+  font-size: 58px;
   font-weight: 400;
-
-  margin-bottom: 35px;
 }
 
 .timer {
+  width: min(850px, 100%);
+
+  margin: 45px auto 0;
 
   display: grid;
 
   grid-template-columns: repeat(4, 1fr);
 
-  gap: 15px;
-
-  max-width: 700px;
-
-  margin: auto;
+  gap: 18px;
 }
 
-.time-box {
+.timer-box {
+  padding: 30px 15px;
 
-  border: 1px solid rgba(255,255,255,.3);
-
-  padding: 25px 10px;
+  border: 1px solid rgba(255,255,255,.25);
 }
 
-.time-box strong {
-
+.timer-box strong {
   display: block;
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 45px;
+  font-size: 55px;
 
   font-weight: 400;
 }
 
-.time-box span {
-
+.timer-box span {
   font-size: 9px;
-
-  letter-spacing: 2px;
-
+  letter-spacing: 3px;
   opacity: .7;
 }
 
@@ -682,44 +573,53 @@ section {
 ========================================================= */
 
 .details {
-
   background: var(--cream);
 }
 
 .details-grid {
-
   display: grid;
 
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 25px;
 }
 
 .detail-card {
+  min-height: 260px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px;
 
   text-align: center;
 
   background: rgba(255,255,255,.55);
 
-  padding: 40px 25px;
+  border: 1px solid rgba(173,137,91,.25);
 
-  border: 1px solid rgba(169,132,89,.22);
+  transition: .3s;
+}
+
+.detail-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
 }
 
 .detail-icon {
-
-  font-size: 30px;
+  margin-bottom: 15px;
 
   color: var(--gold);
 
-  margin-bottom: 15px;
+  font-size: 31px;
 }
 
 .detail-card h3 {
-
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 30px;
+  font-size: 34px;
 
   font-weight: 500;
 
@@ -727,122 +627,72 @@ section {
 }
 
 .detail-card p {
+  color: var(--text-soft);
 
   font-size: 12px;
-
-  line-height: 1.8;
-
-  color: var(--soft);
+  line-height: 1.9;
 }
 
 .map-button {
-
   display: inline-block;
 
   margin-top: 15px;
 
-  padding: 10px 18px;
+  padding: 11px 20px;
 
   border: 1px solid var(--gold);
-
-  border-radius: 30px;
+  border-radius: 50px;
 
   font-size: 9px;
-
   letter-spacing: 2px;
 
   transition: .3s;
 }
 
 .map-button:hover {
-
   background: var(--brown);
-
   color: white;
 }
 
 
 /* =========================================================
-   PARENTS
+   FAMILY
 ========================================================= */
 
-.parents {
-
-  background: #eee2d0;
-
-  text-align: center;
+.family {
+  background: var(--cream-dark);
 }
 
-.parents-box {
-
-  max-width: 750px;
+.family-box {
+  width: min(850px, 100%);
 
   margin: auto;
 
-  padding: 40px;
+  padding: 55px;
 
-  border: 1px solid rgba(169,132,89,.35);
+  text-align: center;
 
-  background: rgba(255,255,255,.25);
+  border: 1px solid rgba(173,137,91,.35);
+
+  background: rgba(255,255,255,.22);
 }
 
-.parents-box h3 {
-
+.family-box h3 {
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 34px;
+  font-size: 38px;
 
   font-weight: 500;
 
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-.parents-box p {
-
+.family-box p {
   font-size: 13px;
 
-  line-height: 2.2;
+  line-height: 2;
 
-  color: var(--soft);
-}
-
-
-/* =========================================================
-   GALLERY
-========================================================= */
-
-.gallery {
-
-  background: var(--cream);
-}
-
-.gallery-grid {
-
-  display: grid;
-
-  grid-template-columns: repeat(3,1fr);
-
-  gap: 12px;
-}
-
-.gallery-grid img {
-
-  width: 100%;
-
-  height: 330px;
-
-  object-fit: cover;
-
-  cursor: pointer;
-
-  transition: .5s;
-}
-
-.gallery-grid img:hover {
-
-  transform: scale(.98);
-
-  filter: brightness(.85);
+  color: var(--text-soft);
 }
 
 
@@ -851,98 +701,98 @@ section {
 ========================================================= */
 
 .timeline {
-
-  background: #eee2d0;
+  background: var(--cream);
 }
 
-.timeline-list {
-
-  max-width: 700px;
-
+.timeline-wrapper {
+  width: min(900px, 100%);
   margin: auto;
 
   position: relative;
 }
 
-.timeline-list::before {
-
+.timeline-wrapper::before {
   content: "";
 
   position: absolute;
 
-  left: 50%;
-
   top: 0;
-
   bottom: 0;
+
+  left: 50%;
 
   width: 1px;
 
   background: var(--gold);
 }
 
-.event {
-
+.timeline-item {
   width: 50%;
 
-  padding: 15px 35px;
-
   position: relative;
+
+  padding: 20px 45px;
 }
 
-.event:nth-child(odd) {
-
+.timeline-item:nth-child(odd) {
   text-align: right;
 }
 
-.event:nth-child(even) {
-
+.timeline-item:nth-child(even) {
   margin-left: 50%;
 }
 
-.event::after {
-
+.timeline-item::after {
   content: "";
 
-  width: 11px;
+  position: absolute;
 
+  top: 28px;
+
+  width: 11px;
   height: 11px;
 
   border-radius: 50%;
 
   background: var(--gold);
 
-  position: absolute;
-
-  top: 24px;
+  border: 3px solid var(--cream);
 }
 
-.event:nth-child(odd)::after {
-
-  right: -5px;
+.timeline-item:nth-child(odd)::after {
+  right: -6px;
 }
 
-.event:nth-child(even)::after {
-
-  left: -5px;
+.timeline-item:nth-child(even)::after {
+  left: -6px;
 }
 
-.event h3 {
-
+.timeline-item h3 {
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 28px;
+  font-size: 32px;
 
   font-weight: 500;
 }
 
-.event p {
+.timeline-item .time {
+  margin-top: 5px;
+
+  color: var(--gold);
 
   font-size: 11px;
 
-  color: var(--soft);
+  letter-spacing: 2px;
+}
 
-  margin-top: 5px;
+.timeline-item p {
+  margin-top: 7px;
+
+  color: var(--text-soft);
+
+  font-size: 11px;
+
+  line-height: 1.7;
 }
 
 
@@ -951,53 +801,51 @@ section {
 ========================================================= */
 
 .rsvp {
-
-  background:
-    linear-gradient(
-      rgba(45,33,23,.65),
-      rgba(45,33,23,.75)
-    ),
-    url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=85")
-    center/cover;
+  position: relative;
 
   color: white;
 
   text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(45,32,23,.68),
+      rgba(45,32,23,.78)
+    ),
+    url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2200&q=90")
+    center / cover;
+
+  background-attachment: fixed;
 }
 
 .rsvp h2 {
-
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 65px;
+  font-size: clamp(55px, 7vw, 85px);
 
   font-weight: 400;
 }
 
 .rsvp p {
-
-  max-width: 600px;
+  width: min(650px, 100%);
 
   margin: 20px auto;
 
   font-size: 13px;
 
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 .rsvp-button {
-
   display: inline-block;
 
-  margin-top: 20px;
+  margin-top: 15px;
 
-  padding: 15px 30px;
+  padding: 16px 30px;
 
-  border: 1px solid #e4c79d;
+  border: 1px solid var(--gold-light);
 
-  border-radius: 40px;
-
-  color: white;
+  border-radius: 50px;
 
   font-size: 10px;
 
@@ -1007,9 +855,7 @@ section {
 }
 
 .rsvp-button:hover {
-
   background: white;
-
   color: var(--brown);
 }
 
@@ -1019,53 +865,81 @@ section {
 ========================================================= */
 
 footer {
-
-  padding: 70px 20px;
-
-  text-align: center;
+  padding: 75px 20px;
 
   background: var(--brown);
 
   color: white;
+
+  text-align: center;
 }
 
-footer .names {
-
+.footer-names {
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 50px;
+  font-size: 58px;
 }
 
 footer p {
+  margin-top: 12px;
 
-  font-size: 10px;
+  font-size: 9px;
 
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 
-  opacity: .7;
-
-  margin-top: 15px;
+  opacity: .65;
 }
 
 
 /* =========================================================
-   FADE ANIMATION
+   REVEAL
 ========================================================= */
 
 .reveal {
-
   opacity: 0;
 
-  transform: translateY(35px);
+  transform: translateY(40px);
 
-  transition: 1s ease;
+  transition:
+    opacity .9s ease,
+    transform .9s ease;
 }
 
-.reveal.visible {
-
+.reveal.show {
   opacity: 1;
-
   transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  section {
+    padding: 85px 0;
+  }
+
+  .couple-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .couple-symbol {
+    display: none;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+    margin: auto;
+  }
+
+  .person-photo {
+    width: 260px;
+    height: 340px;
+  }
+
 }
 
 
@@ -1073,105 +947,185 @@ footer p {
    MOBILE
 ========================================================= */
 
-@media(max-width: 700px) {
+@media (max-width: 650px) {
+
+  .container {
+    width: min(100% - 32px, 500px);
+  }
 
   section {
-    padding: 70px 18px;
+    padding: 70px 0;
+  }
+
+  .opening-card {
+    padding: 50px 25px;
+  }
+
+  .opening-card::after {
+    inset: 10px;
+  }
+
+  .opening-names {
+    font-size: 67px;
+  }
+
+  .opening-date {
+    letter-spacing: 3px;
+  }
+
+  .hero {
+    min-height: 92vh;
+    background-attachment: scroll;
+  }
+
+  .hero-content {
+    padding: 25px;
+  }
+
+  .hero h1 {
+    font-size: 78px;
+  }
+
+  .hero h1 span {
+    font-size: 40px;
+  }
+
+  .hero-kicker {
+    font-size: 9px;
+    letter-spacing: 4px;
+  }
+
+  .hero-date {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .intro {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .translation {
+    font-size: 21px;
   }
 
   .couple-grid {
-
     grid-template-columns: 1fr;
-
-  }
-
-  .details-grid {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  .gallery-grid {
-
-    grid-template-columns: repeat(2,1fr);
-
-  }
-
-  .gallery-grid img {
-
-    height: 230px;
-
-  }
-
-  .timer {
-
-    grid-template-columns: repeat(2,1fr);
-
-  }
-
-  .timeline-list::before {
-
-    left: 15px;
-
-  }
-
-  .event,
-  .event:nth-child(even) {
-
-    width: 100%;
-
-    margin-left: 0;
-
-    text-align: left;
-
-    padding-left: 45px;
-
-  }
-
-  .event:nth-child(odd)::after,
-  .event:nth-child(even)::after {
-
-    left: 10px;
-
-    right: auto;
-
+    gap: 50px;
   }
 
   .person-photo {
-
     width: 230px;
-
     height: 300px;
+  }
 
+  .person h3 {
+    font-size: 38px;
+  }
+
+  .timer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .timer-box {
+    padding: 20px 10px;
+  }
+
+  .timer-box strong {
+    font-size: 42px;
+  }
+
+  .family-box {
+    padding: 35px 20px;
+  }
+
+  .timeline-wrapper::before {
+    left: 13px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 40px;
+    padding-right: 5px;
+    text-align: left;
+  }
+
+  .timeline-item::after,
+  .timeline-item:nth-child(odd)::after,
+  .timeline-item:nth-child(even)::after {
+    left: 7px;
+    right: auto;
+  }
+
+  .timeline-item h3 {
+    font-size: 28px;
+  }
+
+  .music-control {
+    width: 48px;
+    height: 48px;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  footer {
+    padding: 60px 20px;
+  }
+
+  .footer-names {
+    font-size: 47px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .opening-names {
+    font-size: 57px;
+  }
+
+  .hero h1 {
+    font-size: 65px;
+  }
+
+  .section-heading h2 {
+    font-size: 43px;
   }
 
 }
 
 </style>
-
 </head>
 
 
 <body class="locked">
 
 
-<!-- =======================================================
-     OPENING PAGE
-======================================================= -->
+<!-- =========================================================
+     OPENING
+========================================================= -->
 
-<div id="opening-page">
+<div class="opening" id="opening">
 
-  <div class="opening-frame">
+  <div class="opening-card">
 
     <div class="bismillah">
       بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
     </div>
 
-    <div class="opening-sub">
+    <div class="opening-note">
       In the name of Allah, the Most Gracious, the Most Merciful
     </div>
 
-    <div class="opening-ornament">
+    <div class="ornament">
       ❦
     </div>
 
@@ -1190,7 +1144,7 @@ footer p {
     </div>
 
     <div class="opening-date">
-      13 JUNE 2027
+      SUNDAY · 13 JUNE 2027
     </div>
 
     <button
@@ -1206,42 +1160,41 @@ footer p {
 </div>
 
 
-<!-- =======================================================
+<!-- =========================================================
      MUSIC
-======================================================= -->
+     
+     IMPORTANT:
+     Put your MP3 in your GitHub project:
+     
+     music/wedding.mp3
+     
+     Then keep the source below.
+========================================================= -->
 
-<audio
-  id="weddingMusic"
-  loop>
-
-  <!-- REPLACE THIS WITH YOUR MP3 URL -->
-
-  <source
-    src="https://cdn.pixabay.com/audio/2022/03/15/audio_9b7c4c7f6c.mp3"
-    type="audio/mpeg">
-
+<audio id="weddingMusic" loop preload="auto">
+  <source src="music/wedding.mp3" type="audio/mpeg">
 </audio>
 
 <button
-  class="music-button"
+  class="music-control"
   id="musicButton"
   onclick="toggleMusic()"
-  aria-label="Music">
+  aria-label="Toggle music">
 
   ♫
 
 </button>
 
 
-<!-- =======================================================
+<!-- =========================================================
      HERO
-======================================================= -->
+========================================================= -->
 
 <section class="hero">
 
   <div class="hero-content">
 
-    <div class="hero-small">
+    <div class="hero-kicker">
       OUR NIKAH
     </div>
 
@@ -1252,27 +1205,27 @@ footer p {
     </h1>
 
     <div class="hero-date">
-      13 JUNE 2027
+      13 JUNE 2027 · 11:30 AM
     </div>
 
   </div>
 
-  <div class="scroll-down">
+  <div class="hero-scroll">
     SCROLL TO EXPLORE
   </div>
 
 </section>
 
 
-<!-- =======================================================
-     INTRO
-======================================================= -->
+<!-- =========================================================
+     ISLAMIC INTRO
+========================================================= -->
 
 <section class="intro reveal">
 
   <div class="container">
 
-    <div class="section-title">
+    <div class="section-heading">
 
       <div class="arabic">
         الحمد لله
@@ -1286,40 +1239,46 @@ footer p {
 
     </div>
 
-    <div class="intro-arabic">
-      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+    <div class="intro-inner">
+
+      <div class="quran">
+        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ
+        أَنفُسِكُمْ أَزْوَاجًا
+      </div>
+
+      <div class="translation">
+
+        “And among His signs is that He created
+        for you mates from among yourselves,
+        that you may find tranquility in them;
+        and He placed between you affection
+        and mercy.”
+
+      </div>
+
     </div>
-
-    <p class="intro-text">
-
-      “And among His signs is that He created for you
-      mates from among yourselves, that you may find
-      tranquility in them; and He placed between you
-      affection and mercy.”
-
-    </p>
 
   </div>
 
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      COUPLE
-======================================================= -->
+========================================================= -->
 
 <section class="couple reveal">
 
   <div class="container">
 
-    <div class="section-title">
+    <div class="section-heading">
 
       <div class="arabic">
         The Couple
       </div>
 
       <h2>
-        Meet the Couple
+        Fayaz & Alfina
       </h2>
 
       <div class="divider"></div>
@@ -1329,14 +1288,17 @@ footer p {
 
     <div class="couple-grid">
 
-      <!-- GROOM -->
+
+      <!-- GROOM PHOTO -->
 
       <div class="person">
 
+        <!-- REPLACE WITH YOUR GROOM PHOTO -->
+
         <img
           class="person-photo"
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=85"
-          alt="Fayaz">
+          src="images/groom.jpg"
+          alt="Fayaz Sirajudeen">
 
         <h3>
           Fayaz Sirajudeen
@@ -1349,14 +1311,21 @@ footer p {
       </div>
 
 
-      <!-- BRIDE -->
+      <div class="couple-symbol">
+        ♡
+      </div>
+
+
+      <!-- BRIDE PHOTO -->
 
       <div class="person">
 
+        <!-- REPLACE WITH YOUR BRIDE PHOTO -->
+
         <img
           class="person-photo"
-          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85"
-          alt="Alfina">
+          src="images/bride.jpg"
+          alt="Alfina Salim">
 
         <h3>
           Alfina Salim
@@ -1375,11 +1344,11 @@ footer p {
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      COUNTDOWN
-======================================================= -->
+========================================================= -->
 
-<section class="countdown">
+<section class="countdown reveal">
 
   <div class="container">
 
@@ -1389,52 +1358,24 @@ footer p {
 
     <div class="timer">
 
-      <div class="time-box">
-
-        <strong id="days">
-          0
-        </strong>
-
-        <span>
-          DAYS
-        </span>
-
+      <div class="timer-box">
+        <strong id="days">0</strong>
+        <span>DAYS</span>
       </div>
 
-      <div class="time-box">
-
-        <strong id="hours">
-          0
-        </strong>
-
-        <span>
-          HOURS
-        </span>
-
+      <div class="timer-box">
+        <strong id="hours">0</strong>
+        <span>HOURS</span>
       </div>
 
-      <div class="time-box">
-
-        <strong id="minutes">
-          0
-        </strong>
-
-        <span>
-          MINUTES
-        </span>
-
+      <div class="timer-box">
+        <strong id="minutes">0</strong>
+        <span>MINUTES</span>
       </div>
 
-      <div class="time-box">
-
-        <strong id="seconds">
-          0
-        </strong>
-
-        <span>
-          SECONDS
-        </span>
-
+      <div class="timer-box">
+        <strong id="seconds">0</strong>
+        <span>SECONDS</span>
       </div>
 
     </div>
@@ -1444,15 +1385,15 @@ footer p {
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      NIKAH DETAILS
-======================================================= -->
+========================================================= -->
 
 <section class="details reveal">
 
   <div class="container">
 
-    <div class="section-title">
+    <div class="section-heading">
 
       <div class="arabic">
         بِإِذْنِ اللَّهِ
@@ -1464,13 +1405,16 @@ footer p {
 
       <div class="divider"></div>
 
+      <p>
+        We would be honoured to have you with us
+        on this blessed occasion.
+      </p>
+
     </div>
 
 
     <div class="details-grid">
 
-
-      <!-- DATE -->
 
       <div class="detail-card">
 
@@ -1490,8 +1434,6 @@ footer p {
       </div>
 
 
-      <!-- TIME -->
-
       <div class="detail-card">
 
         <div class="detail-icon">
@@ -1510,12 +1452,10 @@ footer p {
       </div>
 
 
-      <!-- VENUE -->
-
       <div class="detail-card">
 
         <div class="detail-icon">
-          ♧
+          ⌂
         </div>
 
         <h3>
@@ -1530,13 +1470,15 @@ footer p {
         <a
           class="map-button"
           href="https://maps.app.goo.gl/ra2fGxRcK1VBk8Zk7"
-          target="_blank">
+          target="_blank"
+          rel="noopener">
 
-          VIEW MAP
+          OPEN GOOGLE MAPS
 
         </a>
 
       </div>
+
 
     </div>
 
@@ -1545,15 +1487,15 @@ footer p {
 </section>
 
 
-<!-- =======================================================
-     PARENTS
-======================================================= -->
+<!-- =========================================================
+     FAMILY
+========================================================= -->
 
-<section class="parents reveal">
+<section class="family reveal">
 
   <div class="container">
 
-    <div class="section-title">
+    <div class="section-heading">
 
       <div class="arabic">
         With the Blessings of Our Families
@@ -1568,37 +1510,27 @@ footer p {
     </div>
 
 
-    <div class="parents-box">
+    <div class="family-box">
+
+      <!--
+        PARENT NAMES ARE NOT FILLED IN YET.
+        Replace these when you send the final names.
+      -->
 
       <h3>
-        With the blessings of our beloved parents
+        With the blessings of our beloved families
       </h3>
 
       <p>
 
-        <strong>
-          Groom's Family
-        </strong>
-
-        <br>
-
-        PK Sirajudeen & Family
-
-        <br><br>
-
-        <strong>
-          Bride's Family
-        </strong>
-
-        <br>
-
-        Salim & Family
-
-        <br><br>
-
         We warmly invite you to join us
         as we begin this beautiful journey together.
 
+        <br><br>
+
+        May Allah bless our union with
+        love, mercy, happiness and barakah.
+
       </p>
 
     </div>
@@ -1608,83 +1540,22 @@ footer p {
 </section>
 
 
-<!-- =======================================================
-     GALLERY
-======================================================= -->
-
-<section class="gallery reveal">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <div class="arabic">
-        Our Memories
-      </div>
-
-      <h2>
-        Gallery
-      </h2>
-
-      <div class="divider"></div>
-
-      <p>
-        A collection of beautiful moments
-        celebrating love and togetherness.
-      </p>
-
-    </div>
-
-
-    <div class="gallery-grid">
-
-      <img
-        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"
-        alt="Wedding">
-
-      <img
-        src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=900&q=85"
-        alt="Wedding">
-
-      <img
-        src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85"
-        alt="Wedding">
-
-      <img
-        src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85"
-        alt="Wedding">
-
-      <img
-        src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=900&q=85"
-        alt="Wedding">
-
-      <img
-        src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=85"
-        alt="Wedding">
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
+<!-- =========================================================
      TIMELINE
-======================================================= -->
+========================================================= -->
 
 <section class="timeline reveal">
 
   <div class="container">
 
-    <div class="section-title">
+    <div class="section-heading">
 
       <div class="arabic">
         InshaAllah
       </div>
 
       <h2>
-        The Celebration
+        The Day
       </h2>
 
       <div class="divider"></div>
@@ -1692,56 +1563,74 @@ footer p {
     </div>
 
 
-    <div class="timeline-list">
+    <div class="timeline-wrapper">
 
 
-      <div class="event">
+      <div class="timeline-item">
 
         <h3>
           Guest Arrival
         </h3>
 
-        <p>
+        <div class="time">
           11:00 AM
+        </div>
+
+        <p>
+          Guests are warmly welcomed.
         </p>
 
       </div>
 
 
-      <div class="event">
+      <div class="timeline-item">
 
         <h3>
           Nikah
         </h3>
 
-        <p>
+        <div class="time">
           11:30 AM
+        </div>
+
+        <p>
+          The blessed Nikah ceremony.
         </p>
 
       </div>
 
 
-      <div class="event">
+      <div class="timeline-item">
 
         <h3>
-          Blessings & Celebration
+          Duas & Blessings
         </h3>
 
-        <p>
+        <div class="time">
           Following the Nikah
+        </div>
+
+        <p>
+          A time for prayers, blessings
+          and family togetherness.
         </p>
 
       </div>
 
 
-      <div class="event">
+      <div class="timeline-item">
 
         <h3>
-          Family Gathering
+          Celebration
         </h3>
 
+        <div class="time">
+          Following the Ceremony
+        </div>
+
         <p>
-          With love & duas
+          Celebrating this beautiful
+          beginning with our loved ones.
         </p>
 
       </div>
@@ -1754,9 +1643,9 @@ footer p {
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      RSVP
-======================================================= -->
+========================================================= -->
 
 <section class="rsvp reveal">
 
@@ -1776,12 +1665,12 @@ footer p {
 
     </p>
 
-    <!-- Replace with your WhatsApp RSVP number -->
 
     <a
       class="rsvp-button"
-      href="https://wa.me/971500000000"
-      target="_blank">
+      href="https://wa.me/971566301609"
+      target="_blank"
+      rel="noopener">
 
       RSVP ON WHATSAPP
 
@@ -1792,13 +1681,13 @@ footer p {
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      FOOTER
-======================================================= -->
+========================================================= -->
 
 <footer>
 
-  <div class="names">
+  <div class="footer-names">
     Fayaz & Alfina
   </div>
 
@@ -1807,34 +1696,45 @@ footer p {
   </p>
 
   <p>
-    MADE WITH LOVE & DUAS
+    MAY ALLAH BLESS OUR JOURNEY
   </p>
 
 </footer>
 
 
-<!-- =======================================================
+<!-- =========================================================
      JAVASCRIPT
-======================================================= -->
+========================================================= -->
 
 <script>
-
 
 /* =========================================================
    OPEN INVITATION
 ========================================================= */
 
+const opening =
+  document.getElementById("opening");
+
+const music =
+  document.getElementById("weddingMusic");
+
+const musicButton =
+  document.getElementById("musicButton");
+
+
 function openInvitation() {
 
-  const opening =
-    document.getElementById("opening-page");
-
-  opening.classList.add("hide");
+  opening.classList.add("closed");
 
   document.body.classList.remove("locked");
 
+  /*
+    Remember that the invitation has been opened
+    during this browser session.
+  */
+
   sessionStorage.setItem(
-    "weddingInvitationOpened",
+    "fayazAlfinaOpened",
     "true"
   );
 
@@ -1847,28 +1747,21 @@ function openInvitation() {
    MUSIC
 ========================================================= */
 
-const music =
-  document.getElementById("weddingMusic");
-
-const musicButton =
-  document.getElementById("musicButton");
-
-
 function playMusic() {
 
   music.play()
-    .then(() => {
+    .then(function() {
 
       musicButton.classList.add("playing");
 
       musicButton.innerHTML = "♫";
 
     })
-    .catch(() => {
+    .catch(function() {
 
       /*
-       Browser may block autoplay.
-       Visitor can tap the music button.
+        Some browsers prevent autoplay.
+        The music button remains available.
       */
 
     });
@@ -1880,11 +1773,14 @@ function toggleMusic() {
 
   if (music.paused) {
 
-    music.play();
+    music.play()
+      .then(function() {
 
-    musicButton.classList.add("playing");
+        musicButton.classList.add("playing");
 
-    musicButton.innerHTML = "♫";
+        musicButton.innerHTML = "♫";
+
+      });
 
   } else {
 
@@ -1900,27 +1796,27 @@ function toggleMusic() {
 
 
 /* =========================================================
-   REMEMBER OPENING
+   SESSION OPENING
 ========================================================= */
 
-window.addEventListener("load", function() {
+window.addEventListener(
+  "load",
+  function() {
 
-  const opened =
-    sessionStorage.getItem(
-      "weddingInvitationOpened"
-    );
+    if (
+      sessionStorage.getItem(
+        "fayazAlfinaOpened"
+      ) === "true"
+    ) {
 
-  if (opened === "true") {
+      opening.classList.add("closed");
 
-    document
-      .getElementById("opening-page")
-      .classList.add("hide");
+      document.body.classList.remove("locked");
 
-    document.body.classList.remove("locked");
+    }
 
   }
-
-});
+);
 
 
 /* =========================================================
@@ -1928,15 +1824,17 @@ window.addEventListener("load", function() {
 ========================================================= */
 
 /*
-  Wedding:
+  IMPORTANT:
+  This uses UAE time.
+
   13 June 2027
   11:30 AM
-
-  Change the time here if necessary.
 */
 
 const weddingDate =
-  new Date("June 13, 2027 11:30:00").getTime();
+  new Date(
+    "2027-06-13T11:30:00+04:00"
+  ).getTime();
 
 
 function updateCountdown() {
@@ -1944,19 +1842,19 @@ function updateCountdown() {
   const now =
     new Date().getTime();
 
-  const distance =
+  const difference =
     weddingDate - now;
 
 
-  if (distance <= 0) {
+  if (difference <= 0) {
 
-    document.getElementById("days").innerText = "0";
+    document.getElementById("days").textContent = "0";
 
-    document.getElementById("hours").innerText = "0";
+    document.getElementById("hours").textContent = "0";
 
-    document.getElementById("minutes").innerText = "0";
+    document.getElementById("minutes").textContent = "0";
 
-    document.getElementById("seconds").innerText = "0";
+    document.getElementById("seconds").textContent = "0";
 
     return;
 
@@ -1965,14 +1863,14 @@ function updateCountdown() {
 
   const days =
     Math.floor(
-      distance /
+      difference /
       (1000 * 60 * 60 * 24)
     );
 
 
   const hours =
     Math.floor(
-      (distance %
+      (difference %
       (1000 * 60 * 60 * 24)) /
       (1000 * 60 * 60)
     );
@@ -1980,7 +1878,7 @@ function updateCountdown() {
 
   const minutes =
     Math.floor(
-      (distance %
+      (difference %
       (1000 * 60 * 60)) /
       (1000 * 60)
     );
@@ -1988,22 +1886,22 @@ function updateCountdown() {
 
   const seconds =
     Math.floor(
-      (distance %
+      (difference %
       (1000 * 60)) /
       1000
     );
 
 
-  document.getElementById("days").innerText =
+  document.getElementById("days").textContent =
     days;
 
-  document.getElementById("hours").innerText =
+  document.getElementById("hours").textContent =
     hours;
 
-  document.getElementById("minutes").innerText =
+  document.getElementById("minutes").textContent =
     minutes;
 
-  document.getElementById("seconds").innerText =
+  document.getElementById("seconds").textContent =
     seconds;
 
 }
@@ -2021,65 +1919,47 @@ setInterval(
    SCROLL REVEAL
 ========================================================= */
 
-const revealElements =
+const revealItems =
   document.querySelectorAll(".reveal");
 
 
-function revealOnScroll() {
+const observer =
+  new IntersectionObserver(
+    function(entries) {
 
-  const windowHeight =
-    window.innerHeight;
+      entries.forEach(
+        function(entry) {
 
+          if (entry.isIntersecting) {
 
-  revealElements.forEach(function(element) {
+            entry.target.classList.add("show");
 
-    const top =
-      element.getBoundingClientRect().top;
+            observer.unobserve(
+              entry.target
+            );
 
+          }
 
-    if (top < windowHeight - 80) {
+        }
+      );
 
-      element.classList.add("visible");
-
+    },
+    {
+      threshold: .12
     }
-
-  });
-
-}
+  );
 
 
-window.addEventListener(
-  "scroll",
-  revealOnScroll
+revealItems.forEach(
+  function(item) {
+
+    observer.observe(item);
+
+  }
 );
-
-revealOnScroll();
-
-
-/* =========================================================
-   GALLERY CLICK
-========================================================= */
-
-document
-  .querySelectorAll(".gallery-grid img")
-  .forEach(function(image) {
-
-    image.addEventListener(
-      "click",
-      function() {
-
-        window.open(
-          image.src,
-          "_blank"
-        );
-
-      }
-    );
-
-  });
-
 
 </script>
 
 </body>
 </html>
+```
