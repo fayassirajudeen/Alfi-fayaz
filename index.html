@@ -1,49 +1,412 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fayaz & Alfina | Wedding Invitation</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Elegant fonts for a classic wedding look -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-</head>
-<body>
+<!-- ================= OPENING PAGE ================= -->
+<div id="opening-page">
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <p class="pre-title">Together with their families, you are invited to the wedding of</p>
-            <h1>Fayaz & Alfina</h1>
-            <p class="date">Saturday, December 12, 2026</p>
-        </div>
-    </header>
+  <div class="opening-overlay"></div>
 
-    <!-- Details Section -->
-    <section class="details">
-        <h2>When & Where</h2>
-        <div class="event-card">
-            <h3>The Celebration</h3>
-            <p class="time">4:00 PM Onwards</p>
-            <p class="location">
-                <strong>The Grand Pearl Banquet</strong><br>
-                123 Celebration Avenue<br>
-                City Name, Region
-            </p>
-        </div>
-    </section>
+  <div class="opening-content">
 
-    <!-- RSVP Section -->
-    <section class="rsvp">
-        <h2>Join Us</h2>
-        <p>Please let us know if you can make it by November 1st, 2026.</p>
-        <!-- Replace the # with a link to a Google Form or Typeform for RSVPs -->
-        <a href="#" class="rsvp-btn">RSVP Here</a>
-    </section>
+    <div class="bismillah">
+      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+    </div>
 
-    <footer>
-        <p>We can't wait to celebrate this special day with you.</p>
-    </footer>
+    <p class="opening-small">
+      In the name of Allah, the Most Gracious, the Most Merciful
+    </p>
 
-</body>
-</html>
+    <div class="ornament">❦</div>
+
+    <p class="opening-label">
+      TOGETHER WITH THEIR FAMILIES
+    </p>
+
+    <h1>
+      Fayaz
+      <span>&</span>
+      Alfina
+    </h1>
+
+    <p class="opening-text">
+      Joyfully invite you to celebrate<br>
+      the beginning of their beautiful journey together
+    </p>
+
+    <div class="opening-date">
+      13 JUNE 2027
+    </div>
+
+    <div class="ornament">❦</div>
+
+    <button onclick="openInvitation()">
+      OPEN INVITATION
+    </button>
+
+  </div>
+</div>
+
+
+<!-- ================= OPENING PAGE STYLE ================= -->
+<style>
+
+#opening-page {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.12),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #f4eadb,
+      #e8d5bd,
+      #f7eee3
+    );
+
+  color: #3d3027;
+
+  overflow: hidden;
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+
+/* Decorative glow */
+
+#opening-page::before {
+  content: "";
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(126, 96, 65, 0.18);
+
+  box-shadow:
+    0 0 0 35px rgba(126,96,65,0.035),
+    0 0 0 70px rgba(126,96,65,0.025);
+
+  pointer-events: none;
+}
+
+
+/* Overlay */
+
+.opening-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.10),
+      rgba(255,255,255,0.18)
+    );
+
+  pointer-events: none;
+}
+
+
+/* Content */
+
+.opening-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(90%, 600px);
+
+  text-align: center;
+
+  padding: 45px 25px;
+
+  animation: openingFade 1.8s ease forwards;
+}
+
+
+/* Bismillah */
+
+.bismillah {
+  font-size: clamp(27px, 5vw, 40px);
+
+  line-height: 1.7;
+
+  margin-bottom: 8px;
+
+  color: #6c5038;
+
+  font-family:
+    "Amiri",
+    "Noto Naskh Arabic",
+    serif;
+}
+
+
+.opening-small {
+  margin: 0 auto 25px;
+
+  max-width: 430px;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #806c59;
+}
+
+
+/* Ornament */
+
+.ornament {
+  font-size: 27px;
+
+  color: #9b7955;
+
+  margin: 18px 0;
+}
+
+
+/* Small heading */
+
+.opening-label {
+  margin-top: 15px;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: #806c59;
+}
+
+
+/* Names */
+
+.opening-content h1 {
+  margin: 15px 0 15px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(58px, 12vw, 105px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+
+  color: #3c2c21;
+}
+
+
+.opening-content h1 span {
+  display: block;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 38px;
+
+  font-style: italic;
+
+  line-height: 1.2;
+
+  color: #9b7955;
+}
+
+
+/* Invitation text */
+
+.opening-text {
+  margin: 25px auto;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #665546;
+}
+
+
+/* Date */
+
+.opening-date {
+  margin-top: 22px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 5px;
+
+  color: #6d5138;
+}
+
+
+/* Button */
+
+.opening-content button {
+  margin-top: 25px;
+
+  padding: 15px 34px;
+
+  border: 1px solid #8c6b4d;
+
+  border-radius: 50px;
+
+  background: rgba(255,255,255,0.28);
+
+  color: #4d3929;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  transition:
+    all 0.35s ease;
+}
+
+
+.opening-content button:hover {
+  background: #6d5138;
+
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(70,50,30,0.15);
+}
+
+
+/* Opening animation */
+
+@keyframes openingFade {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* Closing animation */
+
+#opening-page.hide-opening {
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  #opening-page::before {
+    width: 420px;
+    height: 420px;
+  }
+
+  .opening-content {
+    padding: 30px 20px;
+  }
+
+  .opening-small {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .opening-label {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .opening-text {
+    font-size: 14px;
+  }
+
+  .opening-date {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+}
+
+</style>
+
+
+<!-- ================= OPENING PAGE SCRIPT ================= -->
+<script>
+
+function openInvitation() {
+
+  const openingPage =
+    document.getElementById("opening-page");
+
+  openingPage.classList.add("hide-opening");
+
+  /*
+   * Prevent the opening page from appearing
+   * again after the visitor clicks Open Invitation.
+   */
+
+  sessionStorage.setItem(
+    "invitationOpened",
+    "true"
+  );
+
+}
+
+
+/* Skip opening page if already opened */
+
+window.addEventListener("load", function() {
+
+  if (
+    sessionStorage.getItem("invitationOpened")
+    === "true"
+  ) {
+
+    const openingPage =
+      document.getElementById("opening-page");
+
+    openingPage.classList.add("hide-opening");
+
+  }
+
+});
+
+</script>
